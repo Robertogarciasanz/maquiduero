@@ -149,6 +149,52 @@ window.MQ_MAQUINAS = [
     fotos: ["img/maquinas/kobelco-sk85msr.webp"]
   },
   {
+    // Foto real de Roberto (20/11/2026), en la nave; parece nueva (asiento con plástico). Modelo leído en el rótulo: confirmar.
+    id: "kobelco-sk50srx",
+    nombre: "Miniexcavadora Kobelco SK50SRX",
+    categoria: "Miniexcavadora",
+    marca: "Kobelco",
+    tipo: "nueva",
+    disponibilidad: "disponible",
+    resumen: "Miniexcavadora de cadenas de radio corto, con cabina cerrada, cuchilla y orugas de goma.",
+    aclaracion: "Modelo leído en el rótulo. Año, peso, medidas y precio: por confirmar.",
+    anio: null, horas: null, precio: null, tarifa: null,
+    medidas: { ancho: null, alto: null, largo: null },
+    peso: null,
+    motor: null,
+    extra: [
+      ["Modelo", "SK50SRX"],
+      ["Orugas", "De goma"],
+      ["Cabina", "Cerrada"],
+      ["Cuchilla", "Sí"]
+    ],
+    faq: [],
+    fotos: ["img/maquinas/kobelco-sk50srx.webp"]
+  },
+  {
+    // Foto real de Roberto (20/11/2026). Modelo leído en el brazo. Faltan datos de la unidad.
+    id: "bobcat-e57w",
+    nombre: "Excavadora de ruedas Bobcat E57W",
+    categoria: "Excavadora",
+    marca: "Bobcat",
+    tipo: "alquiler",
+    disponibilidad: "disponible",
+    resumen: "Excavadora de ruedas: se mueve sola por carretera y asfalto sin estropearlo. Con cabina cerrada y cuchilla.",
+    aclaracion: "Año, horas, peso, medidas y precio: por confirmar.",
+    anio: null, horas: null, precio: null, tarifa: null,
+    medidas: { ancho: null, alto: null, largo: null },
+    peso: null,
+    motor: null,
+    extra: [
+      ["Modelo", "E57W"],
+      ["Tren de rodaje", "Ruedas"],
+      ["Cabina", "Cerrada, con rotativo"],
+      ["Cuchilla", "Sí"]
+    ],
+    faq: [],
+    fotos: ["img/maquinas/bobcat-e57w.webp"]
+  },
+  {
     // Foto real de Roberto (20/11/2026), en la nave. Modelo leído en el rótulo. Faltan datos de la unidad.
     id: "bobcat-e26",
     nombre: "Miniexcavadora Bobcat E26",
