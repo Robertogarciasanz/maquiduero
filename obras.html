@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link rel="icon" href="img/favicon-64.png" type="image/png">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Obras y movimiento de tierras en Valladolid | Maquiduero</title>
+<link rel="canonical" href="https://mqduero.es/">
+<meta name="description" content="Venta, alquiler y taller de maquinaria de obra en toda España. Medidas y peso de cada máquina. Distribuidor AUSA, Kobelco, Tabe, Husqvarna.">
+<link rel="stylesheet" href="css/estilos.css?v=20261120-1130">
+<style>.hero,#catalogo,#tarifas-alquiler,#marcas,#taller,#noticias{display:none !important}</style>
+</head>
+<body>
+
+<div class="aviso-borrador">Web en desarrollo. Los datos marcados "por confirmar" hay que revisarlos con Maquiduero.</div>
+
+<header class="cabecera">
+  <a class="logo" href="index.html"><img src="img/logo-maquiduero-240.webp" alt="Maquiduero" width="95" height="56" style="display:block"></a>
+  <button class="boton-menu" type="button" aria-expanded="false" aria-controls="menu">Menú</button>
+  <nav class="menu" id="menu" aria-label="Menú principal">
+    <a href="obras.html">Obras</a>
+    <div class="menu-grupo">
+      <a href="productos.html">Productos</a>
+      <div class="submenu">
+        <a href="productos.html#cargadoras">Cargadoras</a>
+        <a href="productos.html#compactacion-ligera">Compactación ligera</a>
+        <a href="productos.html#excavadoras">Excavadoras</a>
+        <a href="productos.html#generadores">Generadores</a>
+        <a href="productos.html#implementos">Implementos</a>
+        <a href="productos.html#telescopicas">Telescópicas</a>
+      </div>
+    </div>
+      <a href="alquiler.html">Alquiler</a>
+  </nav>
+  <a class="btn btn-primario btn-cabecera" href="#presupuesto">Pedir presupuesto</a>
+</header>
+
+<main id="inicio">
+
+<section class="hero">
+  <h1>Maquinaria de obra nueva, de ocasión y de alquiler</h1>
+  <p>Vendemos, alquilamos y reparamos maquinaria. Mira el peso y las medidas de cada máquina antes de llamar y pide presupuesto en un minuto.</p>
+  <div class="botones">
+    <a class="btn btn-primario" href="productos.html">Ver máquinas</a>
+    <a class="btn btn-secundario" data-whatsapp href="#contacto">Escribir por WhatsApp</a>
+  </div>
+</section>
+
+
+
+<section id="catalogo" class="seccion" hidden>
+  <span id="productos" class="ancla"></span><span id="ocasion" class="ancla"></span><span id="alquiler" class="ancla"></span>
+  <h2>Productos</h2>
+  <p class="nota">Cada máquina es una unidad real del patio. Debajo de la foto tienes el peso y las medidas para saber si cabe por la puerta o la aguanta tu remolque. Los precios están en el <a href="alquiler.html#tarifas-alquiler">listado de precios</a>.</p>
+
+  <form class="filtros" id="filtros" onsubmit="return false">
+    <div class="chips" role="group" aria-label="Tipo">
+      <button type="button" class="chip activo" data-tipo="todas">Todas</button>
+      <button type="button" class="chip" data-tipo="ocasion">Ocasión</button>
+      <button type="button" class="chip" data-tipo="alquiler">Alquiler</button>
+    </div>
+    <label class="check"><input type="checkbox" id="f-disponible"> Solo disponibles ahora</label>
+  </form>
+
+  <p class="nota" id="resultado"></p>
+  <div class="rejilla" id="rejilla"></div>
+</section>
+
+<section id="tarifas-alquiler" class="seccion fondo-suave">
+  <h2>Alquiler</h2>
+  <p>Alquiler por día, semana o mes, con o sin operador. En cada ficha ves si la máquina está disponible ahora o hasta qué día está alquilada.</p>
+  <p class="botones"><a class="btn btn-secundario" href="alquiler.html">Ver máquinas de alquiler</a></p>
+  <p class="nota">Tarifas por confirmar con Maquiduero.</p>
+</section>
+
+<section id="obras" class="seccion">
+  <h2>Obras y servicios</h2>
+  <p>Trabajos reales hechos con nuestras máquinas: qué obra era, qué máquina se usó y cómo quedó.</p>
+  <div class="tierras">
+    <div class="tierras-cabecera">
+      <h3>Nuestros servicios: movimiento de tierras</h3>
+      <p>Excavación, zanjas, cimentaciones y obras completas con maquinaria y personal propios, transporte de la maquinaria y gestión de los residuos.</p>
+    </div>
+    <div class="tierras-lista">
+      <div class="tierras-item"><strong>Medios propios</strong><span>Maquinaria, personal y transporte de la maquinaria por nuestros medios.</span></div>
+      <div class="tierras-item"><strong>Documentación al día</strong><span>Normativa vigente y alta en NALANDA, e-Coordina y e-Gestiona para facilitar la gestión con el cliente.</span></div>
+      <div class="tierras-item"><strong>Huertos solares</strong><span>Excavación de zanjas para canalizaciones y cimentación de estructuras en numerosos huertos solares.</span></div>
+    </div>
+  </div>
+  <div class="rejilla">
+    <article class="tarjeta"><div class="foto"><video src="video/trabajos-excavaciones.mp4#t=0.5" controls muted playsinline preload="metadata" style="width:100%;height:100%;object-fit:cover"></video></div><div class="cuerpo"><h3>Trabajos de excavación</h3></div></article>
+    <article class="tarjeta"><div class="foto"><video src="video/obra-compactacion-rodillo.mp4#t=0.5" controls muted playsinline preload="metadata" style="width:100%;height:100%;object-fit:contain;background:#000"></video></div><div class="cuerpo"><h3>Compactación con rodillo</h3></div></article>
+    <article class="tarjeta"><div class="foto"><video src="video/obra-desde-cabina.mp4#t=0.5" controls muted playsinline preload="metadata" style="width:100%;height:100%;object-fit:contain;background:#000"></video></div><div class="cuerpo"><h3>Trabajo visto desde la cabina</h3></div></article>
+    <article class="tarjeta"><div class="foto"><img src="img/obras/dana-valencia-escombros.webp" alt="Limpieza y desescombro tras la DANA en Paiporta y Catarroja" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div><div class="cuerpo"><h3>Limpieza y desescombro tras la DANA (2024-2025)</h3><p class="nota">Paiporta y Catarroja (Valencia). Maquiduero estuvo presente ayudando en las labores de limpieza y desescombro tras la DANA de 2024.</p></div></article>
+    <article class="tarjeta"><div class="foto"><img src="img/obras/plataforma-transporte.webp" srcset="img/obras/plataforma-transporte-400.webp 400w, img/obras/plataforma-transporte-800.webp 800w" sizes="(max-width: 600px) 92vw, 320px" decoding="async" alt="Plataforma de gancho para transporte de maquinaria" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div><div class="cuerpo"><h3>Transporte de maquinaria</h3><p class="nota">Llevamos la máquina a tu obra y la recogemos con nuestra propia plataforma.</p></div></article>
+    <article class="tarjeta"><div class="foto"><img src="img/obras/camion-man-portacontenedores.webp" srcset="img/obras/camion-man-portacontenedores-400.webp 400w, img/obras/camion-man-portacontenedores-800.webp 800w" sizes="(max-width: 600px) 92vw, 320px" decoding="async" alt="Camión MAN portacontenedores de Maquiduero" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div><div class="cuerpo"><h3>Camión portacontenedores</h3><p class="nota">Camión MAN con gancho para mover contenedores y la plataforma de transporte de maquinaria.</p></div></article>
+  </div>
+</section>
+
+<section id="marcas" class="seccion fondo-suave">
+  <h2>Marcas</h2>
+  <p>Somos distribuidor oficial de estas marcas. Pulsa una para ver sus máquinas.</p>
+  <div class="rejilla-marcas" id="rejilla-marcas"></div>
+</section>
+
+<section id="taller" class="seccion">
+  <h2>Taller y servicio técnico</h2>
+  <p>Reparación, mantenimiento y recambios de maquinaria de obra, de nuestras marcas y de otras.</p>
+  <p class="nota">Texto y fotos del taller por confirmar.</p>
+</section>
+
+<section id="noticias" class="seccion fondo-suave">
+  <h2>Noticias</h2>
+  <p class="nota">Novedades, máquinas que llegan al patio y ferias. Por confirmar con Maquiduero.</p>
+</section>
+
+<section id="presupuesto" class="seccion fondo-suave">
+  <div class="dos-columnas">
+    <div class="caja">
+      <h2>Pide presupuesto</h2>
+      <p class="nota">Dinos qué máquina buscas, las fechas y dónde es la obra. Te contestamos por WhatsApp o por teléfono.</p>
+            <form id="form-presupuesto">
+        <label>¿Qué máquina buscas?<input name="maquina" id="campo-maquina" placeholder="Ej.: miniexcavadora de menos de 1 m"></label>
+        <fieldset class="fechas">
+          <legend>¿Para qué fechas? (pincha para abrir el calendario)</legend>
+          <label>Desde<input type="date" name="desde" required></label>
+          <label>Hasta<input type="date" name="hasta" required></label>
+        </fieldset>
+        <label>¿Dónde es la obra?<input name="lugar" placeholder="Pueblo o dirección" required></label>
+        <div class="botones">
+          <button class="btn btn-primario" type="submit" data-via="whatsapp">Ver si lo tenemos</button>
+        </div>
+        <p class="nota">Te contestamos por WhatsApp. Si prefieres, llámanos al 607 444 903.</p>
+      </form>
+    </div>
+    <div class="caja" id="contacto">
+      <h2>Contacto</h2>
+      <p>
+        Teléfono: <a data-tel href="#"></a><br>
+        Email: <a data-email href="#"></a><br>
+        Dirección: <span data-direccion></span><br>
+        Horario: <span data-horario></span>
+      </p>
+      <div class="mapa">Ctra. de Villabañez, 7 · 47320 Tudela de Duero (Valladolid)</div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="siguiente" style="text-align:center;padding:24px 20px"><a class="btn btn-primario" href="productos.html">Siguiente: Productos →</a></div>
+<footer class="pie">
+  <span data-empresa></span> · mqduero.es · <a href="legal.html#aviso-legal">Aviso legal</a> · <a href="legal.html#privacidad">Privacidad</a> · <a href="legal.html#cookies">Cookies</a> · <a href="codigo-etico.html">Código Ético</a>
+  <p class="marcas-pie" style="font-size:12px;color:#8a909c;margin:10px 0 0">Distribuidor oficial: AUSA · Kobelco · Tabe · Husqvarna · Genergy · Himoinsa</p>
+</footer>
+
+<nav class="barra-movil" aria-label="Contacto rápido">
+  <a data-tel href="#">Llamar</a>
+  <a class="wa" data-whatsapp href="#contacto">WhatsApp</a>
+  <a class="presu" href="#presupuesto">Presupuesto</a>
+</nav>
+
+<dialog id="ficha" aria-labelledby="ficha-titulo">
+  <button class="cerrar" type="button" aria-label="Cerrar">×</button>
+  <div id="ficha-contenido"></div>
+</dialog>
+
+<script src="js/config.js?v=20261120-1130"></script>
+<script src="js/maquinas.js?v=20261120-1130"></script>
+<script src="js/app.js?v=20261120-1130"></script>
+</body>
+</html>

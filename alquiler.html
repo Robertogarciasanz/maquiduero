@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link rel="icon" href="img/favicon-64.png" type="image/png">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alquiler de maquinaria en Valladolid | Maquiduero</title>
+<link rel="canonical" href="https://mqduero.es/">
+<meta name="description" content="Venta, alquiler y taller de maquinaria de obra en toda España. Medidas y peso de cada máquina. Distribuidor AUSA, Kobelco, Tabe, Husqvarna.">
+<link rel="stylesheet" href="css/estilos.css?v=20261120-1130">
+<style>.hero,#obras,#marcas,#taller,#noticias{display:none !important}</style>
+<style>
+  .tarifas { margin-top: 20px; }
+  .tarifas-cat { border: 1px solid #e3e6ec; border-radius: 10px; background: #fff; margin-bottom: 10px; overflow: hidden; }
+  .tarifas-cat summary { padding: 14px 16px; font-weight: 700; cursor: pointer; }
+  .tarifas-cat table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .tarifas-cat th, .tarifas-cat td { text-align: left; padding: 9px 14px; border-top: 1px solid #e3e6ec; }
+  .tarifas-cat th { color: #5b6475; font-weight: 600; }
+  .tarifas-cat .precio { text-align: right; font-weight: 700; white-space: nowrap; }
+</style>
+<style>
+  .tarifas { margin-top: 20px; }
+  .tarifas-cat { border: 1px solid #e3e6ec; border-radius: 10px; background: #fff; margin-bottom: 10px; overflow: hidden; }
+  .tarifas-cat summary { padding: 14px 16px; font-weight: 700; cursor: pointer; }
+  .tarifas-cat table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .tarifas-cat th, .tarifas-cat td { text-align: left; padding: 9px 14px; border-top: 1px solid #e3e6ec; }
+  .tarifas-cat th { color: #5b6475; font-weight: 600; }
+  .tarifas-cat .precio { text-align: right; font-weight: 700; white-space: nowrap; }
+</style>
+</head>
+<body>
+
+<div class="aviso-borrador">Web en desarrollo. Los datos marcados "por confirmar" hay que revisarlos con Maquiduero.</div>
+
+<header class="cabecera">
+  <a class="logo" href="index.html"><img src="img/logo-maquiduero-240.webp" alt="Maquiduero" width="95" height="56" style="display:block"></a>
+  <button class="boton-menu" type="button" aria-expanded="false" aria-controls="menu">Menú</button>
+  <nav class="menu" id="menu" aria-label="Menú principal">
+    <a href="obras.html">Obras</a>
+    <div class="menu-grupo">
+      <a href="productos.html">Productos</a>
+      <div class="submenu">
+        <a href="productos.html#cargadoras">Cargadoras</a>
+        <a href="productos.html#compactacion-ligera">Compactación ligera</a>
+        <a href="productos.html#excavadoras">Excavadoras</a>
+        <a href="productos.html#generadores">Generadores</a>
+        <a href="productos.html#implementos">Implementos</a>
+        <a href="productos.html#telescopicas">Telescópicas</a>
+      </div>
+    </div>
+      <a href="alquiler.html">Alquiler</a>
+  </nav>
+  <a class="btn btn-primario btn-cabecera" href="#presupuesto">Pedir presupuesto</a>
+</header>
+
+<main id="inicio">
+
+<section class="hero">
+  <h1>Maquinaria de obra nueva, de ocasión y de alquiler</h1>
+  <p>Vendemos, alquilamos y reparamos maquinaria. Mira el peso y las medidas de cada máquina antes de llamar y pide presupuesto en un minuto.</p>
+  <div class="botones">
+    <a class="btn btn-primario" href="productos.html">Ver máquinas</a>
+    <a class="btn btn-secundario" data-whatsapp href="#contacto">Escribir por WhatsApp</a>
+  </div>
+</section>
+
+
+
+<section id="catalogo" class="seccion">
+  <span id="productos" class="ancla"></span><span id="ocasion" class="ancla"></span><span id="alquiler" class="ancla"></span>
+  <h2>Maquinaria en alquiler</h2>
+  <p class="nota">Todo lo que vendemos también se alquila. Cada máquina es una unidad real del patio. Debajo de la foto tienes el peso y las medidas para saber si cabe por la puerta o la aguanta tu remolque. Los precios están en el <a href="alquiler.html#tarifas-alquiler">listado de precios</a>.</p>
+
+  <form class="filtros" id="filtros" onsubmit="return false">
+    <div class="chips" role="group" aria-label="Tipo">
+      <button type="button" class="chip activo" data-tipo="todas">Todas</button>
+      <button type="button" class="chip" data-tipo="ocasion">Ocasión</button>
+      <button type="button" class="chip" data-tipo="alquiler">Alquiler</button>
+    </div>
+    <label class="check"><input type="checkbox" id="f-disponible"> Solo disponibles ahora</label>
+  </form>
+
+  <p class="nota" id="resultado"></p>
+  <div class="rejilla" id="rejilla"></div>
+</section>
+
+<section id="tarifas-alquiler" class="seccion fondo-suave">
+  <h2>Alquiler</h2>
+  <p>Disponemos de una amplia gama de maquinaria en alquiler y en alquiler con operador para proyectos a corto y largo plazo. Flexibilidad, mantenimiento incluido y equipos de última generación para que siempre cuentes con la mejor solución sin inversión inicial.</p>
+  <div class="caja" style="margin:16px 0">
+    <h3 style="margin-top:0">¿Con conductor o sin conductor?</h3>
+    <ul style="margin:0;padding-left:20px">
+      <li><strong>Máquinas de hasta 2.500 kg:</strong> se alquilan con conductor o sin conductor, como prefieras.</li>
+      <li><strong>Máquinas de más de 2.500 kg:</strong> se alquilan siempre con conductor.</li>
+      <li><strong>Implementos</strong> (ahoyador, barredora, rodillo…): se pueden alquilar solos, para tu máquina.</li>
+    </ul>
+    <p style="margin:10px 0 0"><strong>¿Tienes alguna duda?</strong> Llámanos al <a data-tel href="#"></a> y te lo aclaramos sin compromiso.</p>
+  </div>
+  
+  <p class="nota">Tarifas por confirmar con Maquiduero.</p>
+
+  <div class="tarifas">
+  <p class="nota">Precios orientativos de referencia. Se alquilan por jornada completa de 8 horas, o por unidad (ud). Pueden variar según disponibilidad, zona de trabajo y condiciones del proyecto. Consulta disponibilidad.</p>
+  <details class="tarifas-cat">
+    <summary>Movimiento de Tierras <span>(16)</span></summary>
+    <table>
+      <thead><tr><th>Código</th><th>Descripción</th><th>Ud.</th><th>Precio</th></tr></thead>
+      <tbody>
+        <tr><td>M05DN010</td><td>Dozer neumáticos 170 CV</td><td>Jornada (8 h)</td><td class="precio">543,12 €</td></tr>
+        <tr><td>M05DC030</td><td>Dozer cadenas D-8 335 CV</td><td>Jornada (8 h)</td><td class="precio">919,76 €</td></tr>
+        <tr><td>M05DN030</td><td>Dozer neumáticos 450 CV</td><td>Jornada (8 h)</td><td class="precio">1.188,24 €</td></tr>
+        <tr><td>M05EC010</td><td>Excav. hidr. cadenas 90 CV</td><td>Jornada (8 h)</td><td class="precio">408,96 €</td></tr>
+        <tr><td>M05PC020</td><td>Pala cargadora orugas 130 CV / 1,8 m³</td><td>Jornada (8 h)</td><td class="precio">401,20 €</td></tr>
+        <tr><td>M05PC030</td><td>Pala cargadora orugas 150 CV / 2,2 m³</td><td>Jornada (8 h)</td><td class="precio">469,12 €</td></tr>
+        <tr><td>M05PN110</td><td>Minicargadora neumáticos 40 CV</td><td>Jornada (8 h)</td><td class="precio">88,56 €</td></tr>
+        <tr><td>M05PN130</td><td>Minicargadora neumáticos 80 CV</td><td>Jornada (8 h)</td><td class="precio">284,00 €</td></tr>
+        <tr><td>M05RN010</td><td>Retrocargadora neumática 50 CV</td><td>Jornada (8 h)</td><td class="precio">231,52 €</td></tr>
+        <tr><td>M05RN020</td><td>Retrocargadora neumática 75 CV</td><td>Jornada (8 h)</td><td class="precio">308,56 €</td></tr>
+        <tr><td>M05RN040</td><td>Retro-Pala con martillo rompedor</td><td>Jornada (8 h)</td><td class="precio">384,80 €</td></tr>
+        <tr><td>M05RN060</td><td>Mini retroexcavadora</td><td>Jornada (8 h)</td><td class="precio">255,20 €</td></tr>
+        <tr><td>M05RN070</td><td>Mini-Retro-pala (31/70 CV) 0,6-0,16 m³</td><td>Jornada (8 h)</td><td class="precio">323,12 €</td></tr>
+        <tr><td>M05ZC010</td><td>Zanjadora de cadenas 80 CV</td><td>Jornada (8 h)</td><td class="precio">453,04 €</td></tr>
+        <tr><td>M05TH020</td><td>Mototrailla hidráulica arrastre 14 m³</td><td>Jornada (8 h)</td><td class="precio">864,16 €</td></tr>
+        <tr><td>M16A400</td><td>Minirretrocargo (31/70 CV) 0,6-0,16 m³</td><td>Jornada (8 h)</td><td class="precio">347,76 €</td></tr>
+      </tbody>
+    </table>
+  </details>
+  <details class="tarifas-cat">
+    <summary>Elevación y Transporte <span>(11)</span></summary>
+    <table>
+      <thead><tr><th>Código</th><th>Descripción</th><th>Ud.</th><th>Precio</th></tr></thead>
+      <tbody>
+        <tr><td>M02CA010</td><td>Carretilla elevadora diesel ST 1 t.</td><td>Jornada (8 h)</td><td class="precio">45,68 €</td></tr>
+        <tr><td>M02CD020</td><td>Carretilla elevadora diesel DT 2,5 t. H=5,5 m</td><td>Jornada (8 h)</td><td class="precio">90,72 €</td></tr>
+        <tr><td>M02CD050</td><td>Carretilla elevadora diesel DT 5 t.</td><td>Jornada (8 h)</td><td class="precio">225,92 €</td></tr>
+        <tr><td>M02EE020</td><td>Elevador eléctrico trifásico 300 kg.</td><td>Jornada (8 h)</td><td class="precio">13,76 €</td></tr>
+        <tr><td>M02EE060</td><td>Elevador gasolina 300 kg.</td><td>Jornada (8 h)</td><td class="precio">21,44 €</td></tr>
+        <tr><td>M02GM010</td><td>Manipulador telescópico 6-8 m.</td><td>Jornada (8 h)</td><td class="precio">133,84 €</td></tr>
+        <tr><td>M02GM020</td><td>Manipulador telescópico 9-12 m.</td><td>Jornada (8 h)</td><td class="precio">160,56 €</td></tr>
+        <tr><td>M02GM030</td><td>Manipulador telescópico 13-15 m.</td><td>Jornada (8 h)</td><td class="precio">269,76 €</td></tr>
+        <tr><td>M02PL020</td><td>Plataforma elevadora telescópica 20 m.</td><td>Jornada (8 h)</td><td class="precio">312,08 €</td></tr>
+        <tr><td>M07TC010</td><td>Carretilla transportadora 1.000 kg.</td><td>Jornada (8 h)</td><td class="precio">38,56 €</td></tr>
+        <tr><td>M07TC040</td><td>Carretilla transportadora 2.500 kg.</td><td>Jornada (8 h)</td><td class="precio">98,00 €</td></tr>
+      </tbody>
+    </table>
+  </details>
+  <details class="tarifas-cat">
+    <summary>Camiones y Dumpers <span>(9)</span></summary>
+    <table>
+      <thead><tr><th>Código</th><th>Descripción</th><th>Ud.</th><th>Precio</th></tr></thead>
+      <tbody>
+        <tr><td>M07AA010</td><td>Dumper autocargable 1.500 kg.</td><td>Jornada (8 h)</td><td class="precio">53,04 €</td></tr>
+        <tr><td>M07AA020</td><td>Dumper autocargable 2.000 kg.</td><td>Jornada (8 h)</td><td class="precio">39,68 €</td></tr>
+        <tr><td>M07AC010</td><td>Dumper convencional 1.500 kg.</td><td>Jornada (8 h)</td><td class="precio">24,56 €</td></tr>
+        <tr><td>M07AC020</td><td>Dumper convencional 2.000 kg.</td><td>Jornada (8 h)</td><td class="precio">49,04 €</td></tr>
+        <tr><td>M07CB005</td><td>Camión basculante de 8 t.</td><td>Jornada (8 h)</td><td class="precio">308,56 €</td></tr>
+        <tr><td>M07CB015</td><td>Camión basculante de 12 t.</td><td>Jornada (8 h)</td><td class="precio">254,64 €</td></tr>
+        <tr><td>M07CB016</td><td>Camión basculante 20 m³ 131/160 CV</td><td>Jornada (8 h)</td><td class="precio">332,00 €</td></tr>
+        <tr><td>M07CB017</td><td>Camión basculante 20 m³ 241/310 CV</td><td>Jornada (8 h)</td><td class="precio">396,16 €</td></tr>
+        <tr><td>M07CG010</td><td>Camión con grúa 6 t.</td><td>Jornada (8 h)</td><td class="precio">407,52 €</td></tr>
+      </tbody>
+    </table>
+  </details>
+  <details class="tarifas-cat">
+    <summary>Compresores y Herramientas <span>(13)</span></summary>
+    <table>
+      <thead><tr><th>Código</th><th>Descripción</th><th>Ud.</th><th>Precio</th></tr></thead>
+      <tbody>
+        <tr><td>M06B010</td><td>Barrenadora a rotación con agua</td><td>Jornada (8 h)</td><td class="precio">219,84 €</td></tr>
+        <tr><td>M06CB010</td><td>Compresor estacionario eléctrico baja presión 6 m³/min.</td><td>Jornada (8 h)</td><td class="precio">31,28 €</td></tr>
+        <tr><td>M06CB070</td><td>Compresor estacionario eléctrico baja presión 52 m³/min.</td><td>Jornada (8 h)</td><td class="precio">249,76 €</td></tr>
+        <tr><td>M06CE090</td><td>Compresor estacionario eléctrico media presión 50 m³/min.</td><td>Jornada (8 h)</td><td class="precio">535,20 €</td></tr>
+        <tr><td>M06CH010</td><td>Compresor portátil eléctrico 2 m³/min.</td><td>Jornada (8 h)</td><td class="precio">43,36 €</td></tr>
+        <tr><td>M06CM050</td><td>Compresor portátil diesel media presión 17 m³/min.</td><td>Jornada (8 h)</td><td class="precio">166,80 €</td></tr>
+        <tr><td>M06MR020</td><td>Martillo manual rompedor eléctrico hasta 12 kg.</td><td>Jornada (8 h)</td><td class="precio">16,80 €</td></tr>
+        <tr><td>M06MR114</td><td>Martillo manual rompedor neumático hasta 9 kg.</td><td>Jornada (8 h)</td><td class="precio">14,00 €</td></tr>
+        <tr><td>M06RE010</td><td>Rozadora eléctrica 132 kW / 30 t.</td><td>Jornada (8 h)</td><td class="precio">2.417,60 €</td></tr>
+        <tr><td>M06RE020</td><td>Rozadora eléctrica 200 kW / 56 t.</td><td>Jornada (8 h)</td><td class="precio">3.961,44 €</td></tr>
+        <tr><td>M11W010</td><td>Equipo chorro aire presión</td><td>Jornada (8 h)</td><td class="precio">30,24 €</td></tr>
+        <tr><td>M11W040</td><td>Equipo chorro arena presión</td><td>Jornada (8 h)</td><td class="precio">30,24 €</td></tr>
+        <tr><td>M16A390</td><td>Martillo hidráulico de 1.001 a 1.500 Kg. Completo</td><td>Jornada (8 h)</td><td class="precio">53,20 €</td></tr>
+      </tbody>
+    </table>
+  </details>
+  <details class="tarifas-cat">
+    <summary>Construcción y Obras <span>(11)</span></summary>
+    <table>
+      <thead><tr><th>Código</th><th>Descripción</th><th>Ud.</th><th>Precio</th></tr></thead>
+      <tbody>
+        <tr><td>M01MP020</td><td>Proyector de mortero 6 m³/h.</td><td>Jornada (8 h)</td><td class="precio">128,96 €</td></tr>
+        <tr><td>M01MP030</td><td>Proyector de mortero 9 m³/h.</td><td>Jornada (8 h)</td><td class="precio">159,84 €</td></tr>
+        <tr><td>M03HH070</td><td>Hormigonera 200 l. eléctrica</td><td>Jornada (8 h)</td><td class="precio">19,28 €</td></tr>
+        <tr><td>M04PS240</td><td>Equipo mecánico pilotes entubados</td><td>Jornada (8 h)</td><td class="precio">993,76 €</td></tr>
+        <tr><td>M04TP210</td><td>Cuchara mástil g. Kelly 1500x3500 mm</td><td>Jornada (8 h)</td><td class="precio">1.419,68 €</td></tr>
+        <tr><td>M08RB090</td><td>Bandeja vibrante manual</td><td>Jornada (8 h)</td><td class="precio">36,16 €</td></tr>
+        <tr><td>M13F031</td><td>Fresadora pavimento en frío A=1000</td><td>Jornada (8 h)</td><td class="precio">1.555,60 €</td></tr>
+        <tr><td>M13F032</td><td>Fresadora pavimento en frío A=2000</td><td>Jornada (8 h)</td><td class="precio">2.516,56 €</td></tr>
+        <tr><td>M13F033</td><td>Fresadora pavimento en frío A=3000</td><td>Jornada (8 h)</td><td class="precio">2.580,64 €</td></tr>
+        <tr><td>M13S010</td><td>Ahoyadora para postes de señales</td><td>Jornada (8 h)</td><td class="precio">275,44 €</td></tr>
+        <tr><td>M16A760</td><td>Vibrador hormigón o regla vibrante</td><td>Jornada (8 h)</td><td class="precio">177,36 €</td></tr>
+      </tbody>
+    </table>
+  </details>
+  <details class="tarifas-cat">
+    <summary>Jardinería y Tala <span>(7)</span></summary>
+    <table>
+      <thead><tr><th>Código</th><th>Descripción</th><th>Ud.</th><th>Precio</th></tr></thead>
+      <tbody>
+        <tr><td>M09AB010</td><td>Biotriturador</td><td>Jornada (8 h)</td><td class="precio">917,52 €</td></tr>
+        <tr><td>M09AB020</td><td>Astilladora</td><td>Jornada (8 h)</td><td class="precio">33,12 €</td></tr>
+        <tr><td>M09AC020</td><td>Cortacésped a gasolina tracción</td><td>Jornada (8 h)</td><td class="precio">41,76 €</td></tr>
+        <tr><td>M09AD010</td><td>Desbrozadora 2 tiempos</td><td>Jornada (8 h)</td><td class="precio">61,76 €</td></tr>
+        <tr><td>M09AM020</td><td>Motosierra de poda a gasolina</td><td>Jornada (8 h)</td><td class="precio">34,88 €</td></tr>
+        <tr><td>M09AR010</td><td>Cortasetos eléctrico</td><td>Jornada (8 h)</td><td class="precio">18,56 €</td></tr>
+        <tr><td>M09AR020</td><td>Cortasetos a gasolina</td><td>Jornada (8 h)</td><td class="precio">34,88 €</td></tr>
+      </tbody>
+    </table>
+  </details>
+  <details class="tarifas-cat">
+    <summary>Contenedores y Desplazamiento <span>(2)</span></summary>
+    <table>
+      <thead><tr><th>Código</th><th>Descripción</th><th>Ud.</th><th>Precio</th></tr></thead>
+      <tbody>
+        <tr><td>M12O013</td><td>Contenedor para escombros 8 m³</td><td>ud</td><td class="precio">215,00 €</td></tr>
+        <tr><td>M18010</td><td>Desplazamiento ida y vuelta al lugar de ejecución</td><td>ud</td><td class="precio">45,00 €</td></tr>
+      </tbody>
+    </table>
+  </details>
+</div>
+</section>
+
+<section id="obras" class="seccion">
+  <h2>Obras</h2>
+  <p>Trabajos reales hechos con nuestras máquinas: qué obra era, qué máquina se usó y cómo quedó.</p>
+  <div class="rejilla">
+    <article class="tarjeta"><div class="foto"><video src="video/trabajos-excavaciones.mp4#t=0.5" controls muted playsinline preload="metadata" style="width:100%;height:100%;object-fit:cover"></video></div><div class="cuerpo"><h3>Trabajos de excavación</h3></div></article>
+  </div>
+</section>
+
+<section id="marcas" class="seccion fondo-suave">
+  <h2>Marcas</h2>
+  <p>Somos distribuidor oficial de estas marcas. Pulsa una para ver sus máquinas.</p>
+  <div class="rejilla-marcas" id="rejilla-marcas"></div>
+</section>
+
+<section id="taller" class="seccion">
+  <h2>Taller y servicio técnico</h2>
+  <p>Reparación, mantenimiento y recambios de maquinaria de obra, de nuestras marcas y de otras.</p>
+  <p class="nota">Texto y fotos del taller por confirmar.</p>
+</section>
+
+<section id="noticias" class="seccion fondo-suave">
+  <h2>Noticias</h2>
+  <p class="nota">Novedades, máquinas que llegan al patio y ferias. Por confirmar con Maquiduero.</p>
+</section>
+
+<section id="presupuesto" class="seccion fondo-suave">
+  <div class="dos-columnas">
+    <div class="caja">
+      <h2>Pide presupuesto</h2>
+      <p class="nota">Dinos qué máquina buscas, las fechas y dónde es la obra. Te contestamos por WhatsApp o por teléfono.</p>
+            <form id="form-presupuesto">
+        <label>¿Qué máquina buscas?<input name="maquina" id="campo-maquina" placeholder="Ej.: miniexcavadora de menos de 1 m"></label>
+        <fieldset class="fechas">
+          <legend>¿Para qué fechas? (pincha para abrir el calendario)</legend>
+          <label>Desde<input type="date" name="desde" required></label>
+          <label>Hasta<input type="date" name="hasta" required></label>
+        </fieldset>
+        <label>¿Dónde es la obra?<input name="lugar" placeholder="Pueblo o dirección" required></label>
+        <div class="botones">
+          <button class="btn btn-primario" type="submit" data-via="whatsapp">Ver si lo tenemos</button>
+        </div>
+        <p class="nota">Te contestamos por WhatsApp. Si prefieres, llámanos al 607 444 903.</p>
+      </form>
+    </div>
+    <div class="caja" id="contacto">
+      <h2>Contacto</h2>
+      <p>
+        Teléfono: <a data-tel href="#"></a><br>
+        Email: <a data-email href="#"></a><br>
+        Dirección: <span data-direccion></span><br>
+        Horario: <span data-horario></span>
+      </p>
+      <div class="mapa">Ctra. de Villabañez, 7 · 47320 Tudela de Duero (Valladolid)</div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="pie">
+  <span data-empresa></span> · mqduero.es · <a href="legal.html#aviso-legal">Aviso legal</a> · <a href="legal.html#privacidad">Privacidad</a> · <a href="legal.html#cookies">Cookies</a> · <a href="codigo-etico.html">Código Ético</a>
+  <p class="marcas-pie" style="font-size:12px;color:#8a909c;margin:10px 0 0">Distribuidor oficial: AUSA · Kobelco · Tabe · Husqvarna · Genergy · Himoinsa</p>
+</footer>
+
+<nav class="barra-movil" aria-label="Contacto rápido">
+  <a data-tel href="#">Llamar</a>
+  <a class="wa" data-whatsapp href="#contacto">WhatsApp</a>
+  <a class="presu" href="#presupuesto">Presupuesto</a>
+</nav>
+
+<dialog id="ficha" aria-labelledby="ficha-titulo">
+  <button class="cerrar" type="button" aria-label="Cerrar">×</button>
+  <div id="ficha-contenido"></div>
+</dialog>
+
+<script src="js/config.js?v=20261120-1130"></script>
+<script src="js/maquinas.js?v=20261120-1130"></script>
+<script src="js/app.js?v=20261120-1130"></script>
+</body>
+</html>

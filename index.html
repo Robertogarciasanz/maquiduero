@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maquiduero | Maquinaria de obra en Tudela de Duero (Valladolid): venta, alquiler y obras</title>
+<meta name="description" content="Maquiduero, en Tudela de Duero (Valladolid): venta y alquiler de maquinaria de obra, con o sin conductor, movimiento de tierras y transporte de maquinaria. Trabajamos en Valladolid y en toda España.">
+<link rel="icon" href="img/favicon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="stylesheet" href="css/estilos.css">
+<style>
+  body { margin: 0; background: #fff; }
+  .pres-hero { background: linear-gradient(90deg, rgba(20,34,58,.88) 0%, rgba(20,34,58,.55) 55%, rgba(20,34,58,.2) 100%), url("img/obras/obra-maquiduero-2026-800.webp") center/cover; color: #fff; padding: 56px 24px 64px; }
+  @media (min-width: 801px) { .pres-hero { background-image: linear-gradient(90deg, rgba(20,34,58,.88) 0%, rgba(20,34,58,.55) 55%, rgba(20,34,58,.2) 100%), url("img/obras/obra-maquiduero-2026.webp"); } }
+  .pres-hero-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 32px; align-items: center; }
+  .pres-logo { width: 240px; height: auto; background: #fff; border-radius: 14px; padding: 14px; }
+  .pres-texto { flex: 1; min-width: 280px; }
+  .pres-texto h1 { font-size: 34px; line-height: 1.2; margin: 0 0 12px; }
+  .pres-texto p { font-size: 18px; margin: 0 0 24px; max-width: 560px; opacity: .95; }
+  .pres-botones { display: flex; flex-wrap: wrap; gap: 12px; }
+  .pres-botones .btn-secundario { background: transparent; color: #fff; border-color: #fff; }
+  .pres-tarjetas { max-width: 1100px; margin: 0 auto; padding: 40px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; }
+  .pres-tarjeta { display: flex; flex-direction: column; border: 1px solid #e3e6ec; border-radius: 12px; overflow: hidden; text-decoration: none; color: #1d2433; background: #fff; }
+  .pres-tarjeta img { width: 100%; height: 170px; object-fit: cover; display: block; background: #eef0f3; }
+  .pres-tarjeta .pt-cuerpo { padding: 16px; flex: 1; }
+  .pres-tarjeta h2 { font-size: 19px; margin: 0 0 6px; }
+  .pres-tarjeta p { margin: 0; color: #5b6475; font-size: 15px; }
+  .pres-tarjeta:hover { border-color: #c8552a; }
+  .pres-pie { background: #f4f5f7; padding: 28px 24px; text-align: center; color: #5b6475; font-size: 15px; }
+  .pres-pie strong { color: #1d2433; }
+  .barra-principal { position: sticky; top: 0; z-index: 20; background: #fff; border-bottom: 1px solid #e3e6ec; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px 22px; padding: 12px 16px; }
+  .barra-principal a { color: #1d2433; text-decoration: none; font-weight: 600; font-size: 15px; }
+  .barra-principal a:hover { color: #c8552a; }
+  .barra-principal a.pedir { background: #c8552a; color: #fff; padding: 8px 14px; border-radius: 8px; }
+  .barra-principal a.pedir:hover { color: #fff; }
+  .pres-tarjeta { position: relative; }
+  .pres-tarjeta .pt-boton { position: static; order: 3; align-self: flex-start; margin: 0 16px 16px; background: #c8552a; color: #fff; font-weight: 700; font-size: 14px; padding: 8px 12px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,.2); }
+  .grupo-desplegable { display: inline-block; }
+  .grupo-desplegable summary { list-style: none; cursor: pointer; display: inline-block; font-weight: 700; font-size: 16px; padding: 10px 16px; border: 1px solid #e3e6ec; border-radius: 8px; background: #fff; }
+  .grupo-desplegable summary::-webkit-details-marker { display: none; }
+  .grupo-desplegable[open] summary { border-color: #c8552a; color: #c8552a; }
+  .grupo-desplegable .botones { margin-top: 10px; }
+  .pres-presupuesto { max-width: 560px; margin: 0 auto; padding: 8px 24px 40px; }
+  .pres-presupuesto h2 { font-size: 22px; margin: 0 0 6px; text-align: center; }
+  .pres-presupuesto .nota { text-align: center; color: #5b6475; margin: 0 0 16px; }
+  .pres-presupuesto form { display: grid; gap: 12px; }
+  .pres-presupuesto label { display: flex; flex-direction: column; gap: 4px; font-size: 14px; color: #1d2433; }
+  .pres-presupuesto input, .pres-presupuesto textarea { padding: 10px; border: 1px solid #e3e6ec; border-radius: 8px; font: inherit; }
+  .pres-presupuesto .botones { justify-content: center; }
+  .pres-presupuesto .fechas { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; border: 0; padding: 0; margin: 0; }
+  .pres-presupuesto .fechas legend { font-size: 14px; color: #1d2433; padding: 0; margin-bottom: 4px; }
+  .pres-presupuesto input[type="date"] { cursor: pointer; background: #fff; min-height: 44px; }
+  .pres-presupuesto input[type="date"]:focus { outline: 2px solid #c8552a; outline-offset: 1px; }
+  @media (max-width: 420px) { .pres-presupuesto .fechas { grid-template-columns: 1fr; } }
+  @media (max-width: 600px) {
+    .pres-hero { padding: 28px 16px 36px; }
+    .pres-hero-inner { gap: 18px; flex-direction: column; align-items: flex-start; }
+    .pres-logo { width: 170px; padding: 10px; }
+    .pres-texto { min-width: 0; width: 100%; }
+    .pres-texto h1 { font-size: 26px; }
+    .pres-texto p { font-size: 16px; margin-bottom: 18px; }
+    .pres-botones .btn { font-size: 14px; padding: 9px 12px; }
+    .barra-principal { gap: 6px 14px; padding: 10px 12px; }
+    .barra-principal a { font-size: 14px; }
+    .pres-tarjetas { padding: 24px 16px; }
+    .pres-presupuesto { padding: 8px 16px 32px; }
+  }
+  .pres-quienes { max-width: 1100px; margin: 0 auto; padding: 32px 24px 0; }
+  .pres-quienes .caja-q { background: #f4f5f7; border-radius: 12px; padding: 28px; display: grid; grid-template-columns: 2fr 1fr; gap: 28px; align-items: start; }
+  .pres-quienes h2 { margin: 0 0 12px; }
+  .pres-quienes p { margin: 0 0 12px; line-height: 1.6; }
+  .pres-quienes ul { margin: 0; padding-left: 20px; line-height: 1.8; }
+  .pres-quienes h3 { margin: 0 0 8px; font-size: 17px; }
+  .pres-quienes .nave-q { margin: 16px 0 0; }
+  .pres-quienes .nave-q img { width: 100%; height: auto; aspect-ratio: 16/9; object-fit: cover; border-radius: 10px; display: block; }
+  .pres-quienes .nave-q figcaption { font-size: 13px; color: #5b6170; margin-top: 6px; }
+  @media (max-width: 760px) { .pres-quienes .caja-q { grid-template-columns: 1fr; padding: 20px; } .pres-quienes { padding: 24px 16px 0; } }
+</style>
+</head>
+<body>
+<nav class="barra-principal" aria-label="Menú principal">
+  <a href="obras.html">Obras</a>
+  <a href="productos.html">Productos</a>
+  <a href="alquiler.html">Alquiler</a>
+  <a class="pedir" href="#presupuesto">Pedir presupuesto</a>
+</nav>
+
+<section class="pres-hero">
+  <div class="pres-hero-inner">
+    <img class="pres-logo" src="img/logo-maquiduero-480.webp" fetchpriority="high" alt="Maquiduero" width="600" height="352">
+    <div class="pres-texto">
+      <h1>Maquinaria y movimiento de tierras en Valladolid y toda España</h1>
+      <p>Maquinaria y personal propios para obras, excavación de zanjas y cimentaciones. Alquilamos maquinaria y vendemos equipos de ocasión.</p>
+      <div class="pres-botones">
+        <a class="btn btn-primario" href="obras.html">Nuestras obras</a>
+        <a class="btn btn-secundario" href="alquiler.html">Alquiler de maquinaria</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pres-quienes" id="quienes-somos">
+  <div class="caja-q">
+    <div>
+      <h2>Quiénes somos</h2>
+      <p><strong>Maquiduero</strong> es una empresa de <strong>Tudela de Duero (Valladolid)</strong> con amplia experiencia en maquinaria de obra. Trabajamos con <strong>personal y maquinaria propios</strong>: vendemos, alquilamos, transportamos y reparamos máquinas, y hacemos obras de movimiento de tierras. Somos distribuidor oficial de AUSA, Kobelco, Tabe, Husqvarna, Genergy y Himoinsa.</p>
+      <figure class="nave-q"><img src="img/obras/nave-taller.webp" srcset="img/obras/nave-taller-400.webp 400w, img/obras/nave-taller-800.webp 800w" sizes="(max-width: 760px) 92vw, 640px" decoding="async" alt="Nave y taller de Maquiduero en Tudela de Duero" width="1200" height="1200" loading="lazy"><figcaption>Nuestra nave y taller en Tudela de Duero.</figcaption></figure>
+    </div>
+    <div>
+      <h3>Dónde estamos</h3>
+      <p>Ctra. de Villabañez, 7<br>47320 Tudela de Duero (Valladolid)<br>Teléfono: <a href="tel:+34607444903">607 444 903</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="pres-tarjetas">
+  <a class="pres-tarjeta" href="obras.html">
+    <img src="img/obras/obra-maquiduero-2026.webp" srcset="img/obras/obra-maquiduero-2026-400.webp 400w, img/obras/obra-maquiduero-2026-800.webp 800w" sizes="(max-width: 760px) 92vw, 360px" decoding="async" alt="Obra de Maquiduero con excavadoras" loading="lazy">
+    <span class="pt-boton">Ver</span>
+    <div class="pt-cuerpo"><h2>Obras y servicios</h2><p>Movimiento de tierras, zanjas, cimentaciones, transporte de maquinaria y gestión de residuos.</p></div>
+  </a>
+  <a class="pres-tarjeta" href="alquiler.html">
+    <img src="img/maquinas/ausa-dumper-alquiler.webp" srcset="img/maquinas/ausa-dumper-alquiler-400.webp 400w, img/maquinas/ausa-dumper-alquiler-800.webp 800w" sizes="(max-width: 760px) 92vw, 360px" decoding="async" alt="Dumper AUSA de alquiler en la nave de Maquiduero" loading="lazy">
+    <span class="pt-boton">Ver</span>
+    <div class="pt-cuerpo"><h2>Alquiler de maquinaria</h2><p>Con y sin operador, a corto y largo plazo, con mantenimiento incluido.</p></div>
+  </a>
+  <a class="pres-tarjeta" href="productos.html">
+    <img src="img/maquinas/kobelco-sk85msr.webp" srcset="img/maquinas/kobelco-sk85msr-400.webp 400w, img/maquinas/kobelco-sk85msr-800.webp 800w" sizes="(max-width: 760px) 92vw, 360px" decoding="async" alt="Excavadora Kobelco SK85MSR a la venta" loading="lazy">
+    <span class="pt-boton">Ver</span>
+    <div class="pt-cuerpo"><h2>Maquinaria a la venta</h2><p>Maquinaria nueva y de ocasión, con peso y medidas.</p></div>
+  </a>
+</section>
+
+
+
+
+
+<section class="pres-presupuesto" id="presupuesto">
+  <h2>Pedir presupuesto</h2>
+  <p class="nota">Dinos qué máquina buscas y elige las fechas en el calendario. Te contestamos y te decimos si la tenemos.</p>
+  <form id="form-presupuesto-inicio">
+    <label>¿Qué máquina buscas?<input name="maquina" placeholder="Ej.: miniexcavadora de menos de 1 m" required></label>
+    <fieldset class="fechas">
+      <legend>¿Para qué fechas? (pincha para abrir el calendario)</legend>
+      <label>Desde<input type="date" name="desde" id="fecha-desde" required></label>
+      <label>Hasta<input type="date" name="hasta" id="fecha-hasta" required></label>
+    </fieldset>
+    <label>¿Dónde es la obra?<input name="lugar" placeholder="Pueblo o dirección" required></label>
+    <div class="botones"><button class="btn btn-primario" type="submit">Ver si lo tenemos</button></div>
+  </form>
+</section>
+<script>
+  (function () {
+    var desde = document.getElementById("fecha-desde");
+    var hasta = document.getElementById("fecha-hasta");
+    function iso(f) { return f.getFullYear() + "-" + String(f.getMonth() + 1).padStart(2, "0") + "-" + String(f.getDate()).padStart(2, "0"); }
+    function bonita(v) { var p = v.split("-"); return p[2] + "/" + p[1] + "/" + p[0]; }
+    desde.min = iso(new Date());
+    hasta.min = desde.min;
+    // Pinchar en cualquier parte del campo abre el calendario (no solo en el icono).
+    [desde, hasta].forEach(function (c) {
+      c.addEventListener("click", function () { if (c.showPicker) { try { c.showPicker(); } catch (e) {} } });
+    });
+    desde.addEventListener("change", function () {
+      hasta.min = desde.value || desde.min;
+      if (hasta.value && hasta.value < desde.value) hasta.value = "";
+      if (desde.value && !hasta.value && hasta.showPicker) { try { hasta.focus(); hasta.showPicker(); } catch (e) {} }
+    });
+    document.getElementById("form-presupuesto-inicio").addEventListener("submit", function (e) {
+      e.preventDefault();
+      var d = new FormData(e.target);
+      var texto = [
+        "Consulta de disponibilidad",
+        "Máquina: " + d.get("maquina"),
+        "Fechas: del " + bonita(d.get("desde")) + " al " + bonita(d.get("hasta")),
+        "Lugar de la obra: " + d.get("lugar")
+      ].join(String.fromCharCode(10));
+      window.location.href = "mailto:robgarsanz@gmail.com?subject=" + encodeURIComponent("Consulta de disponibilidad") + "&body=" + encodeURIComponent(texto);
+    });
+  })();
+</script>
+<footer class="pres-pie">
+  <p><strong>Maquiduero S.L.U.</strong> · Ctra. de Villabañez, 7 · 47320 Tudela de Duero (Valladolid)</p>
+  <p>Teléfono <a href="tel:+34607444903">607 444 903</a> · <a href="legal.html">Aviso legal</a></p>
+  <p class="marcas-pie" style="font-size:12px;color:#8a909c;margin:10px 0 0">Distribuidor oficial: AUSA · Kobelco · Tabe · Husqvarna · Genergy · Himoinsa</p>
+</footer>
+
+</body>
+</html>
