@@ -19,6 +19,7 @@ window.MQ_MAQUINAS = [
     marca: "Bobcat",
     tipo: "ocasion",
     disponibilidad: "disponible",
+    resumen: "Miniexcavadora de unas 2 t con orugas que se recogen hasta 98 cm: entra por huecos estrechos. Con cuchilla y tres cazos.",
     anio: 2024,
     horas: 582,
     precio: null,
@@ -31,14 +32,12 @@ window.MQ_MAQUINAS = [
       ["Peso operativo de fábrica", "1.711 kg (catálogo)"],
       ["Profundidad de excavación", "225 cm (catálogo)"],
       ["Alcance máximo", "387 cm (catálogo)"],
-      ["Ancho con orugas extendidas", "136 cm (catálogo)"],
       ["Peso en operación", "unos 2.000 kg (con accesorios)"],
       ["Accesorios", "Cuchilla, cazo de limpieza y dos cazos para zanjas"],
-      ["Orugas", "Ancho variable (ancho mínimo por confirmar)"],
-      ["Manual", "PDF disponible en la web actual"]
+      ["Orugas", "Ancho variable: de 0,98 m recogidas a 1,36 m abiertas"]
     ],
     faq: [
-      ["¿Cabe por una puerta normal?", "Por confirmar el ancho mínimo con las orugas recogidas."],
+      ["¿Cabe por una puerta?", "Con las orugas recogidas mide 98 cm de ancho: pasa por huecos de 1 m."],
       ["¿La puedo llevar en mi remolque?", "Pesa unos 2.000 kg en operación. Hace falta un remolque que admita ese peso; consúltanos el carné necesario."],
       ["¿Cuántas horas tiene?", "582 horas reales (año 2024)."]
     ],
@@ -52,6 +51,7 @@ window.MQ_MAQUINAS = [
     marca: "AUSA",
     tipo: "nueva",
     disponibilidad: "disponible",
+    resumen: "Dumper diésel 4x4 de 2 t de carga, con tolva giratoria 180° y pala autocargable.",
     anio: null,
     horas: null,
     precio: null,
@@ -156,15 +156,17 @@ window.MQ_MAQUINAS = [
     marca: "Kobelco",
     tipo: "nueva",
     disponibilidad: "disponible",
-    resumen: "Miniexcavadora de cadenas de radio corto, con cabina cerrada, cuchilla y orugas de goma.",
-    aclaracion: "Modelo leído en el rótulo. Año, peso, medidas y precio: por confirmar.",
+    resumen: "Miniexcavadora de unas 5 t de radio corto: la parte de atrás casi no sobresale al girar. Cabina cerrada, cuchilla y orugas de goma.",
+    aclaracion: "Datos del catálogo Kobelco (SK50SRX-7); medidas de transporte de Lectura Specs. Modelo leído en el rótulo. Año y precio por confirmar.",
     anio: null, horas: null, precio: null, tarifa: null,
-    medidas: { ancho: null, alto: null, largo: null },
-    peso: null,
-    motor: null,
+    medidas: { ancho: 1.96, alto: 2.56, largo: 5.28 },
+    peso: 4810,
+    motor: "Yanmar diésel, 29,1 kW a 2.400 rpm",
     extra: [
-      ["Modelo", "SK50SRX"],
-      ["Orugas", "De goma"],
+      ["Peso según versión", "4.660–4.980 kg (catálogo)"],
+      ["Cazo", "0,14 m³"],
+      ["Alcance máximo", "5,85 m (cabina, balancín de 1,55 m)"],
+      ["Orugas", "De goma, 40 cm de ancho"],
       ["Cabina", "Cerrada"],
       ["Cuchilla", "Sí"]
     ],
@@ -179,19 +181,23 @@ window.MQ_MAQUINAS = [
     marca: "Bobcat",
     tipo: "alquiler",
     disponibilidad: "disponible",
-    resumen: "Excavadora de ruedas: se mueve sola por carretera y asfalto sin estropearlo. Con cabina cerrada y cuchilla.",
-    aclaracion: "Año, horas, peso, medidas y precio: por confirmar.",
+    resumen: "Excavadora de ruedas de unas 6 t: va sola por carretera hasta 30 km/h y no estropea el asfalto. Cabina cerrada y cuchilla.",
+    aclaracion: "Datos de catálogo Bobcat de la versión actual (Stage V); la unidad puede ser anterior (5.920 kg). Medidas de transporte de Lectura Specs. Año, horas y precio por confirmar.",
     anio: null, horas: null, precio: null, tarifa: null,
-    medidas: { ancho: null, alto: null, largo: null },
-    peso: null,
-    motor: null,
+    medidas: { ancho: 2.29, alto: 2.86, largo: 6.12 },
+    peso: 6312,
+    motor: "Bobcat D24 diésel turbo, 42,5 kW (57 CV)",
     extra: [
-      ["Modelo", "E57W"],
+      ["Profundidad de excavación", "3,50 m (3,80 m con balancín largo)"],
+      ["Velocidad máxima", "30 km/h"],
+      ["Cazo", "Hasta 0,28 m³"],
       ["Tren de rodaje", "Ruedas"],
       ["Cabina", "Cerrada, con rotativo"],
       ["Cuchilla", "Sí"]
     ],
-    faq: [],
+    faq: [
+      ["¿Puede ir por carretera?", "Sí, va por sus medios hasta 30 km/h. Para distancias largas la llevamos en plataforma."]
+    ],
     fotos: ["img/maquinas/bobcat-e57w.webp"]
   },
   {
@@ -402,6 +408,7 @@ window.MQ_MAQUINAS = [
     marca: "AUSA",
     tipo: "nueva",
     disponibilidad: "disponible",
+    resumen: "Dumper articulado de 10 t de carga, con cabina cerrada y tolva giratoria que descarga en altura.",
     anio: null, horas: null, precio: null, tarifa: null,
     // Medidas de transporte: alto = arco abatido / cabina (3,38 m). Datos facilitados por Roberto el 19/11/2026.
     medidas: { ancho: 2.41, alto: 3.38, largo: 5.02 },
