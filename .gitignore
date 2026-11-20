@@ -75,3 +75,6 @@ img/obras/obra-restauracion-tejado-400w.webp
 img/obras/obra-restauracion-tejado-800w.webp
 img/obras/obra-viga-hormigon-400w.webp
 img/obras/obra-viga-hormigon-800w.webp
+
+# Caché de Cloudflare (lleva datos de la cuenta)
+.wrangler/
