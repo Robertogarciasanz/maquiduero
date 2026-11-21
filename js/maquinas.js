@@ -443,5 +443,23 @@ window.MQ_MAQUINAS = [
     ],
     // Foto de catálogo del fabricante (pequeña). Cambiar por una real cuando la haya.
     fotos: ["img/maquinas/ausa-gran-tonelaje.webp"]
+  },
+  {
+    // Estaba escrita a mano en productos.html (sin ficha). Pasada aquí para que tenga su ficha. Precio "a convenir" según la tarjeta original.
+    id: "niveladora-bobcat",
+    nombre: "Niveladora Bobcat para minicargadora",
+    categoria: "Implemento",
+    marca: "Bobcat",
+    tipo: "nueva",
+    disponibilidad: "disponible",
+    resumen: "Niveladora para montar en la minicargadora Bobcat.",
+    aclaracion: "Precio a convenir. Medidas, peso y compatibilidad por confirmar.",
+    anio: null, horas: null, precio: null, tarifa: null,
+    medidas: { ancho: null, alto: null, largo: null },
+    peso: null,
+    motor: null,
+    extra: [],
+    faq: [],
+    fotos: ["img/maquinas/niveladora-bobcat.webp"]
   }
 ];

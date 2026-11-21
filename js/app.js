@@ -62,7 +62,7 @@
   if (tira) tira.innerHTML = C.marcas.map(function (m) { return "<span>" + esc(m) + "</span>"; }).join("");
 
   // ---------- catálogo ----------
-  var filtro = { tipo: "todas", marca: null, ancho: null, peso: null, disponible: false };
+  var filtro = { tipo: "todas", marca: null, ancho: null, peso: null, disponible: false, conductor: null };
   var rejilla = document.getElementById("rejilla");
 
   // Imagen ligera: el navegador elige la copia de 400 u 800 px según la pantalla (como mucho 800 px: la foto nunca se ve más grande).
@@ -122,6 +122,7 @@
     return '<article class="tarjeta">' + foto(m) +
       '<div class="cuerpo">' +
       '<span class="etiqueta">' + etiqueta + "</span>" +
+      (m.alquiler !== false ? '<span class="conductor-tag ' + tipoConductor(m) + '">' + ETIQUETA_CONDUCTOR[tipoConductor(m)] + "</span>" : "") +
       "<h3>" + esc(m.nombre) + "</h3>" +
       datosTarjeta(m) +
       '<div class="botones">' +
@@ -136,6 +137,15 @@
     // Si falta el dato no se puede asegurar que cumpla el filtro: se oculta.
     if (filtro.ancho != null && (m.medidas.ancho == null || m.medidas.ancho > filtro.ancho)) return false;
     if (filtro.peso != null && (m.peso == null || m.peso > filtro.peso)) return false;
+    // Alquiler sin o con conductor. Las que no tienen el peso confirmado salen en los dos filtros hasta confirmarlo.
+    if (filtro.conductor) {
+      if (m.alquiler === false) return false;
+      var t = tipoConductor(m);
+      var vale = filtro.conductor === "sin"
+        ? (t === "sin" || t === "ambos" || t === "pendiente")
+        : (t === "con" || t === "ambos" || t === "pendiente");
+      if (!vale) return false;
+    }
     return true;
   }
 
@@ -151,7 +161,7 @@
 
   function ponerTipo(tipo) {
     filtro.tipo = tipo;
-    document.querySelectorAll(".chip").forEach(function (c) { c.classList.toggle("activo", c.dataset.tipo === tipo); });
+    document.querySelectorAll(".chip[data-tipo]").forEach(function (c) { c.classList.toggle("activo", c.dataset.tipo === tipo); });
   }
   document.querySelector(".chips").addEventListener("click", function (e) {
     var b = e.target.closest(".chip");
@@ -197,6 +207,15 @@
   });
   document.getElementById("f-disponible").addEventListener("change", function (e) { filtro.disponible = e.target.checked; pintar(); });
 
+  // Filtro sin conductor / con conductor (pulsar otra vez lo quita).
+  document.querySelectorAll("[data-cond]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      filtro.conductor = filtro.conductor === b.dataset.cond ? null : b.dataset.cond;
+      document.querySelectorAll("[data-cond]").forEach(function (x) { x.classList.toggle("activo", x.dataset.cond === filtro.conductor); });
+      pintar();
+    });
+  });
+
   // ---------- ficha ----------
   var dialogo = document.getElementById("ficha");
   var contenido = document.getElementById("ficha-contenido");
@@ -204,29 +223,46 @@
   dialogo.addEventListener("click", function (e) { if (e.target === dialogo) dialogo.close(); });
 
   // Norma de Maquiduero (Roberto, 20/11/2026): sin conductor solo hasta 2.500 kg; los implementos se alquilan solos.
+  // Clasificación para la tarjeta y los filtros: "sin" | "ambos" | "con" | "pendiente" (peso sin confirmar).
+  function tipoConductor(m) {
+    if (m.categoria === "Implemento") return "sin";
+    if (m.peso == null) return "pendiente";
+    return m.peso <= 2500 ? "ambos" : "con";
+  }
+  var ETIQUETA_CONDUCTOR = { sin: "Sin conductor", ambos: "Con o sin conductor", con: "Maquinaria pesada: con conductor", pendiente: "Conductor: por confirmar" };
+
   function conductor(m) {
     if (m.categoria === "Implemento") return "No hace falta: el implemento se alquila solo";
     if (m.peso == null) return "Con o sin conductor hasta 2.500 kg; más pesada, con conductor";
-    return m.peso <= 2500 ? "Con o sin conductor" : "Solo con conductor (más de 2.500 kg)";
+    return m.peso <= 2500 ? "Con o sin conductor" : "Maquinaria pesada (más de 2.500 kg): se alquila con conductor. Consulta con la empresa si hay disponible.";
   }
 
   function fila(k, v) { return "<tr><th>" + esc(k) + "</th><td>" + v + "</td></tr>"; }
 
   function abrirFicha(m) {
-    var filas = [
-      fila("Estado", esc(estadoTexto(m))),
+    // La ficha se despliega por capas, según lo que pregunte la persona: primero la máquina,
+    // luego precio, medidas y datos técnicos, y al final las preguntas frecuentes.
+    // En ordenador se ven todas abiertas; en móvil, cerradas hasta que se pulsan.
+    var ancho = window.matchMedia("(min-width: 821px)").matches;
+    function grupo(titulo, lista) {
+      if (!lista.length) return "";
+      return '<details class="ficha-grupo"' + (ancho ? " open" : "") + "><summary>" + titulo + "</summary><table>" + lista.join("") + "</table></details>";
+    }
+    var precio = [
       fila("Venta / alquiler", esc(modo(m))),
       fila("Alquiler con conductor", esc(conductor(m))),
-      fila("Precio", '<a href="alquiler.html#tarifas-alquiler">Ver listado de precios</a>'),
+      fila("Precio", '<a href="alquiler.html#tarifas-alquiler">Ver listado de precios</a>')
+    ];
+    var medidas = [
       fila("Peso", kg(m.peso)),
       fila("Ancho", metros(m.medidas.ancho)),
       fila("Alto", metros(m.medidas.alto)),
-      fila("Largo", metros(m.medidas.largo)),
-      fila("Motor", val(m.motor))
+      fila("Largo", metros(m.medidas.largo))
     ];
-    if (m.anio) filas.push(fila("Año", esc(m.anio)));
-    if (m.horas != null) filas.push(fila("Horas", num(m.horas) + " h"));
-    (m.extra || []).forEach(function (p) { filas.push(fila(p[0], val(p[1]))); });
+    var tecnico = [fila("Motor", val(m.motor))];
+    if (m.anio) tecnico.push(fila("Año", esc(m.anio)));
+    if (m.horas != null) tecnico.push(fila("Horas", num(m.horas) + " h"));
+    (m.extra || []).forEach(function (p) { tecnico.push(fila(p[0], val(p[1]))); });
 
     var galeria = m.fotos && m.fotos.length
       ? m.fotos.map(function (f) { return imgLigera(f, m.nombre, "160px"); }).join("")
@@ -241,9 +277,12 @@
       '<h2 id="ficha-titulo">' + esc(m.nombre) + "</h2>" +
       (m.resumen ? "<p>" + esc(m.resumen) + "</p>" : "") +
       (m.aclaracion ? '<p class="nota">' + esc(m.aclaracion) + "</p>" : "") +
+      '<p class="ficha-estado"><strong>Estado:</strong> ' + esc(estadoTexto(m)) + "</p>" +
       '<div class="galeria">' + galeria + "</div>" +
-      "<table>" + filas.join("") + "</table>" +
-      (faq ? "<h3>Preguntas frecuentes</h3>" + faq : "") +
+      grupo("Precio y alquiler", precio) +
+      grupo("Medidas y peso", medidas) +
+      grupo("Motor y datos técnicos", tecnico) +
+      (faq ? '<details class="ficha-grupo"' + (ancho ? " open" : "") + "><summary>Preguntas frecuentes (" + m.faq.length + ")</summary>" + faq + "</details>" : "") +
       '<p class="botones" style="margin-top:16px"><button class="btn btn-primario" data-preguntar="' + esc(m.id) + '">Preguntar por esta máquina</button>' +
       '<a class="btn btn-secundario" href="tel:' + C.telefonoLink + '">Llamar</a></p>';
     dialogo.showModal();

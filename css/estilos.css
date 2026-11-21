@@ -95,6 +95,9 @@ dialog#ficha::backdrop { background: rgba(0,0,0,.5); }
 #ficha .galeria img, #ficha .galeria .foto { height: 110px; border-radius: 8px; }
 #ficha details { border-bottom: 1px solid var(--linea); padding: 8px 0; }
 #ficha summary { cursor: pointer; font-weight: 600; }
+#ficha .ficha-grupo > summary { padding: 12px 0; font-size: 16px; color: var(--tinta); }
+#ficha .ficha-grupo > summary:hover { color: var(--acento); }
+#ficha .ficha-estado { margin: 0 0 12px; font-size: 15px; }
 
 .oculto { display: none !important; }
 .cabecera .btn-cabecera { display: none; }
@@ -164,3 +167,58 @@ dialog#ficha::backdrop { background: rgba(0,0,0,.5); }
 .fechas legend { padding: 0; margin-bottom: 4px; font-size: 14px; }
 input[type="date"] { cursor: pointer; min-height: 44px; }
 @media (max-width: 420px) { .fechas { grid-template-columns: 1fr; } }
+
+/* Apartados desplegables de textos largos (legal, código ético): cerrados por defecto en móvil */
+.bloque-desplegable { border-bottom: 1px solid var(--linea); }
+.bloque-desplegable > summary { list-style: none; cursor: pointer; position: relative; padding: 12px 28px 12px 0; }
+.bloque-desplegable > summary::-webkit-details-marker { display: none; }
+.bloque-desplegable > summary::after { content: "+"; position: absolute; right: 4px; top: 50%; transform: translateY(-50%); font-size: 22px; color: var(--acento); }
+.bloque-desplegable[open] > summary::after { content: "–"; }
+.bloque-desplegable > summary h2, .bloque-desplegable > summary h3 { margin: 0; }
+.bloque-desplegable > summary h2 { font-size: 18px; }
+.bloque-desplegable > summary h3 { font-size: 16px; }
+.bloque-desplegable > .bloque-desplegable { padding-left: 4px; }
+.bloque-desplegable > :not(summary) { margin-bottom: 10px; }
+.bloque-desplegable > :not(summary):last-child { margin-bottom: 14px; }
+
+/* Etiqueta de conductor en cada tarjeta de alquiler */
+.conductor-tag { align-self: flex-start; font-size: 13px; font-weight: 700; padding: 4px 10px; border-radius: 999px; }
+.conductor-tag.sin { background: #e6f4ec; color: #1f6b3a; }
+.conductor-tag.ambos { background: #eef1f5; color: #1d2433; }
+.conductor-tag.con { background: #fde9e1; color: #8a3413; }
+.conductor-tag.pendiente { background: #fff4d6; color: #6b4e00; }
+
+/* Móvil: tamaños mínimos de texto más legibles (en ordenador no cambia nada) */
+@media (max-width: 600px) {
+  .etiqueta, .estado, .ejemplo { font-size: 13px; }
+  .datos, .filtros label, .tierras-item span, .nota, .foto, .pie { font-size: 14px; }
+  .pie { font-size: 13px; }
+  .foto { font-size: 14px; }
+  /* 16 px evita que iPhone haga zoom automático al escribir en un campo */
+  input, select, textarea { font-size: 16px; }
+
+  /* Enlaces y textos largos (p. ej. una URL) no pueden salirse de la pantalla */
+  p, li, td, th, dd, a { overflow-wrap: anywhere; }
+
+  /* Catálogo: tarjetas en horizontal (foto a la izquierda) para que la lista ocupe menos */
+  .rejilla { grid-template-columns: 1fr; gap: 12px; }
+  .tarjeta { flex-direction: row; }
+  .tarjeta .foto { flex: 0 0 38%; height: auto; min-height: 140px; }
+  .tarjeta .foto img { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .tarjeta .cuerpo { padding: 12px; gap: 6px; }
+  .tarjeta h3 { font-size: 16px; line-height: 1.25; }
+  .tarjeta .datos { font-size: 14px; }
+  .tarjeta .botones { flex-wrap: wrap; }
+  .tarjeta .btn { font-size: 14px; padding: 9px 8px; min-height: 44px; }
+
+  /* Tarifas de alquiler: cada fila en dos columnas, sin tabla ancha */
+  .tarifas-cat table, .tarifas-cat tbody, .tarifas-cat tr, .tarifas-cat td, .tarifas-cat th { display: block; width: 100%; }
+  .tarifas-cat thead { display: none; }
+  .tarifas-cat tr { display: grid; grid-template-columns: 1fr auto; gap: 2px 12px; padding: 10px 14px; border-top: 1px solid #e3e6ec; }
+  .tarifas-cat th, .tarifas-cat td { border-top: 0; padding: 0; }
+  .tarifas-cat .precio { text-align: right; }
+  .tarifas-cat tr td:nth-child(1) { display: none; }                 /* código: no hace falta en el móvil */
+  .tarifas-cat tr td:nth-child(2) { grid-column: 1; grid-row: 1; }   /* descripción */
+  .tarifas-cat tr td:nth-child(3) { grid-column: 1; grid-row: 2; font-size: 13px; color: #5b6475; }  /* unidad */
+  .tarifas-cat tr td.precio { grid-column: 2; grid-row: 1 / span 2; align-self: center; }
+}
